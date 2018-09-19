@@ -31,11 +31,11 @@ strokeWeight(1);
  
   float val = randomGaussian();
   float sd = 75;                  // Define a standard deviation
-  float mean = 1000/2;           // Define a mean value (middle of the screen along the x-axis)
-  float x = ( val * sd ) + mean;  // Scale the random number by standard deviation and mean
+  float mean = lineX.length/2;           // Define a mean value (middle of the screen along the x-axis)
+  float x = constrain(( val * sd ) + mean, 0, 999);  // Scale the random number by standard deviation and mean
  
  lineY[int(x)] += increase;
-    for (int v = 0; v<1000;v++)
+    for (int v = 0; v<lineX.length;v++)
   {
     line(lineX[v],0.0,lineX[v],lineY[v]);
   } 
